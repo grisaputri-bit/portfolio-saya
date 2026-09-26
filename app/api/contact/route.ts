@@ -16,11 +16,11 @@ export async function POST(req: Request) {
       );
     }
 
-    const { error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+    const { data, error } = await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
       to: [process.env.CONTACT_EMAIL!],
-      subject: `Pesan baru dari ${name}`,
       replyTo: email,
+      subject: `Pesan baru dari ${name}`,
       text: `
 Nama: ${name}
 Email: ${email}
@@ -31,23 +31,29 @@ ${message}
     });
 
     if (error) {
-      console.error(error);
+      console.error("RESEND ERROR:", error);
 
       return NextResponse.json(
-        { error: "Gagal mengirim pesan." },
+        {
+          error: error.message || "Gagal mengirim pesan.",
+        },
         { status: 500 }
       );
     }
+
+    console.log("EMAIL SENT:", data);
 
     return NextResponse.json({
       success: true,
       message: "Pesan berhasil dikirim.",
     });
   } catch (error) {
-    console.error(error);
+    console.error("SERVER ERROR:", error);
 
     return NextResponse.json(
-      { error: "Terjadi kesalahan pada server." },
+      {
+        error: "Terjadi kesalahan pada server.",
+      },
       { status: 500 }
     );
   }

@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
+  const [status, setStatus] = useState<"success" | "error" | "">("");
+
   return (
     <section id="contact" className="contact-section">
 
@@ -54,6 +57,8 @@ export default function Contact() {
               const email = formData.get("email");
               const message = formData.get("message");
 
+              setStatus("");
+
               try {
                 const response = await fetch("/api/contact", {
                   method: "POST",
@@ -70,15 +75,16 @@ export default function Contact() {
                 const data = await response.json();
 
                 if (!response.ok) {
-                  alert(data.error || "Gagal mengirim pesan.");
+                  console.error(data.error);
+                  setStatus("error");
                   return;
                 }
 
-                alert("Pesan berhasil dikirim!");
+                setStatus("success");
                 form.reset();
               } catch (error) {
                 console.error(error);
-                alert("Terjadi kesalahan. Silakan coba lagi.");
+                setStatus("error");
               }
             }}
           >
@@ -108,6 +114,26 @@ export default function Contact() {
             <button type="submit">
               SEND MESSAGE ↗
             </button>
+
+            {/* Success Message */}
+            {status === "success" && (
+              <div className="contact-status success">
+                <strong>THANK YOU! &lt;3</strong>
+                <span>
+                  Your message has been sent successfully.
+                </span>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {status === "error" && (
+              <div className="contact-status error">
+                <strong>OOPS!</strong>
+                <span>
+                  Something went wrong. Please try again.
+                </span>
+              </div>
+            )}
           </form>
 
           {/* Email */}
