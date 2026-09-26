@@ -38,6 +38,19 @@ const projects = [
     link: "/project/sivika",
     external: false,
   },
+  {
+    number: "04",
+    title: "Personal Portfolio",
+    category: "WEB DEVELOPMENT",
+    status: "COMPLETED",
+    description:
+      "A personal portfolio website designed to showcase my projects, experience, skills, and background in web development.",
+    role: "Web Development · UI/UX",
+    stack: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    visual: "portfolio",
+    link: "https://portfolio-saya-nine.vercel.app/",
+    external: true,
+  },
 ];
 
 export default function Projects() {
@@ -49,7 +62,7 @@ export default function Projects() {
         <div className="projects-grid"></div>
 
         <span className="projects-bg-text text-one">
-          BUILD / 03
+          BUILD / 04
         </span>
 
         <span className="projects-bg-text text-two">
@@ -61,14 +74,15 @@ export default function Projects() {
         <span className="projects-bg-dot dot-three"></span>
       </div>
 
-
       <div className="projects-container">
 
         {/* HEADER */}
         <div className="projects-header">
 
           <div>
-            <p className="projects-label">PROJECTS / 03</p>
+            <p className="projects-label">
+              PROJECTS / 04
+            </p>
 
             <h2>
               Things I’ve
@@ -84,7 +98,6 @@ export default function Projects() {
 
         </div>
 
-
         {/* PROJECT LIST */}
         <div className="projects-list">
 
@@ -99,7 +112,9 @@ export default function Projects() {
 
                 <div className="project-browser">
 
+                  {/* BROWSER TOP */}
                   <div className="browser-top">
+
                     <div className="browser-dots">
                       <span></span>
                       <span></span>
@@ -109,13 +124,16 @@ export default function Projects() {
                     <span className="browser-url">
                       project / {project.title.toLowerCase()}
                     </span>
+
                   </div>
 
-
+                  {/* BROWSER CONTENT */}
                   <div className="browser-content">
 
+                    {/* ================= LAVEBAYA ================= */}
                     {project.visual === "lavebaya" && (
                       <div className="mock-lavebaya">
+
                         <span className="mock-small">
                           KEBAYA RENTAL
                         </span>
@@ -129,81 +147,178 @@ export default function Projects() {
                         <div className="mock-pill">
                           Explore Collection ↗
                         </div>
+
                       </div>
                     )}
 
-
+                    {/* ================= PAJERO ================= */}
                     {project.visual === "pajero" && (
-                      <div className="mock-pajero">
+                      <div className="mock-pajero mock-under-construction">
 
-                        <div className="mock-dashboard-top">
-                          <span>PAJERO</span>
-                          <span>DISDUKCAPIL</span>
+                        <div className="construction-top">
+                          <span>
+                            PAJERO
+                          </span>
+
+                          <span>
+                            DISDUKCAPIL GARUT
+                          </span>
                         </div>
 
-                        <div className="mock-dashboard-body">
-                          <div className="mock-side"></div>
+                        <div className="construction-center">
 
-                          <div className="mock-data">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                          <span className="construction-label">
+                            ● IN DEVELOPMENT
+                          </span>
 
-                            <div className="mock-chart">
-                              <i></i>
-                              <i></i>
-                              <i></i>
-                              <i></i>
-                              <i></i>
-                            </div>
-                          </div>
+                          <strong>
+                            UNDER
+                            <br />
+                            CONSTRUCTION
+                          </strong>
+
+                          <p>
+                            This system is currently being developed.
+                          </p>
+
+                        </div>
+
+                        <div className="construction-line"></div>
+
+                        <div className="construction-bottom">
+                          <span>
+                            PUBLIC SERVICE SYSTEM
+                          </span>
+
+                          <span>
+                            02 / 04
+                          </span>
                         </div>
 
                       </div>
                     )}
 
-
+                    {/* ================= SIVIKA ================= */}
                     {project.visual === "sivika" && (
-                      <div className="mock-sivika">
+                      <div className="mock-sivika mock-under-construction">
 
-                        <div className="sivika-header">
-                          <span>SIVIKA</span>
-                          <span>● SYSTEM</span>
+                        <div className="construction-top">
+                          <span>
+                            SIVIKA
+                          </span>
+
+                          <span>
+                            ● SYSTEM
+                          </span>
                         </div>
 
-                        <div className="sivika-flow">
-                          <div>INPUT</div>
-                          <b>→</b>
-                          <div>PROCESS</div>
-                          <b>→</b>
-                          <div>OUTPUT</div>
+                        <div className="construction-center">
+
+                          <span className="construction-label">
+                            ● IN DEVELOPMENT
+                          </span>
+
+                          <strong>
+                            UNDER
+                            <br />
+                            CONSTRUCTION
+                          </strong>
+
+                          <p>
+                            This system is currently being developed.
+                          </p>
+
                         </div>
 
-                        <div className="sivika-lines">
-                          <span></span>
-                          <span></span>
-                          <span></span>
+                        <div className="construction-line"></div>
+
+                        <div className="construction-bottom">
+                          <span>
+                            WEB APPLICATION
+                          </span>
+
+                          <span>
+                            03 / 04
+                          </span>
                         </div>
+
+                      </div>
+                    )}
+
+                    {/* ================= PERSONAL PORTFOLIO ================= */}
+                    {project.visual === "portfolio" && (
+                      <div className="mock-portfolio">
+
+                        {/* MINI NAVBAR */}
+                        <div className="portfolio-mini-nav">
+
+                          <strong>
+                            GRISA PUTRI
+                          </strong>
+
+                          <div className="portfolio-mini-links">
+                            <span>ABOUT</span>
+                            <span>WORK</span>
+                            <span>CONTACT</span>
+                          </div>
+
+                        </div>
+
+                        {/* MINI HERO */}
+                        <div className="portfolio-mini-main">
+
+                          <span className="mock-small">
+                            WEB DEVELOPER / 04
+                          </span>
+
+                          <strong className="portfolio-mini-title">
+                            Building
+                            <br />
+                            digital
+                            <br />
+                            experiences.
+                          </strong>
+
+                          <div className="portfolio-mini-bottom">
+
+                            <span>
+                              SELECTED WORKS
+                            </span>
+
+                            <div className="mock-pill">
+                              VIEW PORTFOLIO ↗
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                        <span className="portfolio-mini-number">
+                          04
+                        </span>
 
                       </div>
                     )}
 
                   </div>
-
                 </div>
 
+                {/* PROJECT NUMBER */}
                 <span className="project-number">
                   {project.number}
                 </span>
 
               </div>
 
-
               {/* CONTENT */}
               <div className="project-content">
 
+                {/* META */}
                 <div className="project-meta">
-                  <span>{project.category}</span>
+
+                  <span>
+                    {project.category}
+                  </span>
 
                   <span
                     className={
@@ -214,37 +329,60 @@ export default function Projects() {
                   >
                     ● {project.status}
                   </span>
+
                 </div>
 
+                {/* TITLE */}
+                <h3>
+                  {project.title}
+                </h3>
 
-                <h3>{project.title}</h3>
-
-
+                {/* ROLE */}
                 <p className="project-role">
                   {project.role}
                 </p>
 
-
+                {/* DESCRIPTION */}
                 <p className="project-description">
                   {project.description}
                 </p>
 
-
+                {/* STACK */}
                 <div className="project-stack">
+
                   {project.stack.map((item) => (
-                    <span key={item}>{item}</span>
+                    <span key={item}>
+                      {item}
+                    </span>
                   ))}
+
                 </div>
 
-<a
-  href={project.link}
-  target={project.external ? "_blank" : undefined}
-  rel={project.external ? "noopener noreferrer" : undefined}
-  className="project-link"
->
-  {project.external ? "VIEW LIVE" : "VIEW DETAIL"}
-  <span>↗</span>
-</a>
+                {/* LINK */}
+                <a
+                  href={project.link}
+                  target={
+                    project.external
+                      ? "_blank"
+                      : undefined
+                  }
+                  rel={
+                    project.external
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="project-link"
+                >
+                  {project.external
+                    ? "VIEW LIVE"
+                    : "VIEW DETAIL"}
+
+                  <span>
+                    ↗
+                  </span>
+
+                </a>
+
               </div>
 
             </article>
